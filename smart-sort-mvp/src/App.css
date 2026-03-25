@@ -1,110 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 body {
     margin: 0;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #ecf0f1;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F0F4F8; /* Sehr weiches, kühles Grau */
     display: flex;
     justify-content: center;
+    -webkit-tap-highlight-color: transparent; /* Entfernt blaue Boxen auf Handys */
 }
 
-.app-container {
+.m3-app {
     width: 100%;
-    max-width: 400px;
-    background-color: #ffffff;
+    max-width: 412px;
     min-height: 100vh;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    background-color: #FEFBFF; /* Material 3 Surface (leicht warmes Weiß) */
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08); /* Nur ein einziger, sehr weicher Schatten für den Desktop */
 }
 
-header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 20px;
-    text-align: center;
+/* --- Header --- */
+.m3-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px 16px 24px;
+    background-color: #FEFBFF;
 }
 
-header h1 {
+.m3-title {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 22px;
+    font-weight: 500;
+    color: #1B1B1F; /* Fast-Schwarz */
 }
 
-.score-board {
-    background-color: #27ae60;
-    color: white;
-    text-align: center;
-    padding: 12px;
-    font-size: 1.1rem;
+.m3-score-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #EADDFF; /* M3 Tonal Purple für Gamification */
+    color: #21005D;
+    padding: 8px 16px;
+    border-radius: 100px; /* Pillenform */
+    font-weight: 500;
+    font-size: 14px;
 }
 
-.main-content {
-    padding: 20px;
-    flex-grow: 1;
+.m3-icon {
+    width: 18px;
+    height: 18px;
 }
 
-.scanner-placeholder {
-    background-color: #f8f9fa;
-    border: 2px dashed #bdc3c7;
-    border-radius: 12px;
+/* --- Content & Scanner --- */
+.m3-content {
+    padding: 0 24px 32px 24px;
+}
+
+.m3-scanner-surface {
+    background-color: #F1F4F9; /* M3 Surface Container */
+    border-radius: 24px; /* Große M3 Radien */
     height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #7f8c8d;
-    margin-bottom: 25px;
+    color: #44474E;
+    margin-bottom: 28px;
+    margin-top: 8px;
 }
 
-.scanner-placeholder .icon {
-    font-size: 3rem;
-    margin-bottom: 10px;
+.m3-scanner-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+    color: #A8C7FA; /* Sanftes Blau */
 }
 
-.controls select, .controls button {
+.m3-scanner-surface p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* --- Formular & Select --- */
+.m3-input-group {
+    margin-bottom: 24px;
+}
+
+.m3-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #44474E;
+    margin-bottom: 8px;
+    padding-left: 4px;
+}
+
+.m3-select-wrapper {
+    position: relative;
+}
+
+.m3-select {
     width: 100%;
-    padding: 14px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 1rem;
-    box-sizing: border-box;
-}
-
-.controls button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    font-weight: bold;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #74777F; /* M3 Outline Color */
+    border-radius: 4px; /* M3 Text Fields haben kleine Radien */
+    padding: 16px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #1B1B1F;
     cursor: pointer;
-    transition: background-color 0.2s;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.controls button:hover {
-    background-color: #2980b9;
+.m3-select:focus {
+    border-color: #0B57D0; /* M3 Primary Blue */
+    border-width: 2px;
+    padding: 15px; /* Verhindert Wackeln beim dickerem Rand */
 }
 
-.result-card {
-    padding: 20px;
+.m3-dropdown-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    color: #44474E;
+    pointer-events: none;
+}
+
+/* --- Button --- */
+.m3-btn {
+    width: 100%;
+    background-color: #0B57D0; /* M3 Primary */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 100px; /* Voll abgerundet (Stadium) */
+    padding: 16px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.m3-btn:hover {
+    background-color: #0842A0; /* M3 Primary Hover */
+}
+
+.m3-btn:active {
+    transform: scale(0.98);
+}
+
+/* --- Error Feedback --- */
+.m3-error {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #F9DEDC; /* M3 Error Container */
+    color: #410E0B; /* M3 On Error Container */
+    padding: 16px;
     border-radius: 12px;
-    text-align: center;
-    margin-top: 20px;
-    animation: popIn 0.3s ease-out;
+    margin-top: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    animation: slideIn 0.3s ease;
 }
 
-.result-card h2 {
-    margin-top: 0;
-    font-size: 1.3rem;
+/* --- Tonal Result Card --- */
+.m3-result-card {
+    padding: 24px;
+    border-radius: 24px;
+    margin-top: 24px;
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 0.3s ease;
+    text-align: center; /* Zentriert alles schön mittig wie auf deinem Bild */
 }
 
-.points-badge {
+.m3-result-title {
+    margin: 0 0 8px 0;
+    font-size: 22px;
+    font-weight: 500;
+    color: inherit; /* WICHTIG: Erzwingt die dunkle, lesbare Textfarbe! */
+}
+
+.m3-result-desc {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.9;
+    color: inherit; /* Auch hier für perfekte Lesbarkeit */
+}
+
+.m3-points-chip {
     display: inline-block;
-    background: rgba(0,0,0,0.2);
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-@keyframes popIn {
-    0% { transform: scale(0.9); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
 }
