@@ -25,3 +25,12 @@
 ## Deployment
 Diese App wird über GitHub Pages veröffentlicht.
 **Live Demo:** [https://lorenzheld.github.io/MVP_M245/]
+
+## Roadmap & Zukünftige Funktionen (Ausblick)
+Dieses MVP dient der Validierung der Kern-Interaktion (schnelles Feedback + Gamification). Für die Weiterentwicklung zur vollwertigen "Smart-Sort AI" sind folgende Features geplant:
+
+* **Echte KI-Bilderkennung (Computer Vision):** Ablösung der Dropdown-Simulation durch eine Live-Kamera-Integration. Ein Machine-Learning-Modell (z. B. via TensorFlow.js) erkennt den Müll direkt über die Handykamera.
+* **Lokalisierung (Geolocation):** Automatische Erkennung der Postleitzahl, um die exakten, gemeindespezifischen Trennregeln aus einer B2G-Datenbank abzurufen, da sich Entsorgungsvorschriften regional stark unterscheiden.
+* **Tangible Rewards (Greifbare Belohnungen):** Verknüpfung der simulierten "Eco-Punkte" mit realen Anreizen, wie z. B. Rabatten auf die lokale Sackgebühr oder Gutscheinen für regionale Shops, um die Langzeitmotivation zu sichern.
+* **Crowdsourcing / Schwarmintelligenz:** Erkennt die KI eine neue Verpackung nicht, können Nutzer diese manuell taggen. So trainiert die Community das Modell kontinuierlich mit neuen Daten.
+* **Edge Computing (Offline-Modus):** Da Mülleimer oft im Keller stehen (schlechter Empfang) und Datenschutz in der eigenen Wohnung oberste Priorität hat, soll die KI-Bildauswertung komplett lokal auf dem Smartphone stattfinden, ohne Bilder in eine Cloud zu laden.
