@@ -24,4 +24,4 @@
 
 ## Deployment
 Diese App wird über GitHub Pages veröffentlicht.
-**Live Demo:** [Link zu deiner GitHub Pages Seite einfügen, z.B. https://dein-username.github.io/SmartSort-MVP/]
+**Live Demo:** [https://lorenzheld.github.io/MVP_M245/]
